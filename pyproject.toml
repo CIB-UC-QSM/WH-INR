@@ -1,0 +1,31 @@
+[project]
+name = "wh-inr"
+version = "0.1.0"
+description = "Weak-harmonic QSM reconstruction with a SIREN implicit neural representation"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "matplotlib>=3.10",
+    "numpy>=2.1",
+    "scipy>=1.15",
+    "torch>=2.7",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+]
+
+[project.scripts]
+wh-inr = "wh_inr.cli:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
